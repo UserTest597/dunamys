@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dunamys Apps | Android Developer & Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="background-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="logo">Dunamys<span>Apps</span></a>
+            <ul class="nav-links">
+                <li><a href="#home">Inicio</a></li>
+                <li><a href="#apps">Aplicaciones</a></li>
+                <li><a href="#projects">Proyectos</a></li>
+                <li><a href="#contact">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <span class="badge">Disponible para proyectos</span>
+                <h1>Bienvenido a <span class="gradient-text">Dunamys Apps</span></h1>
+                <p>Desarrollo de aplicaciones Android innovadoras, enfocadas en la excelencia técnica y funcional.</p>
+                <div class="hero-btns">
+                    <a href="https://play.google.com/store/apps/developer?id=DunamysApps" target="_blank"
+                        class="btn btn-primary"><i class="fab fa-google-play"></i> Google Play Store</a>
+                    <a href="#contact" class="btn btn-secondary">Contactar</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="carousel-container">
+                    <div class="carousel-track" id="carouselTrack">
+                        <div class="carousel-slide">
+                            <img src="app_radio_ui_1767438239290.png" alt="Radio App">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="app_calc_ui_1767438254583.png" alt="Calculator App">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="app_tv_ui_1767438269241.png" alt="TV Live App">
+                        </div>
+                    </div>
+                    <div class="carousel-dots" id="carouselDots">
+                        <span class="dot active"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Apps Section (New) -->
+        <section id="apps" class="apps-section">
+            <div class="section-header">
+                <h2>Mis Mini-Apps Interactivas</h2>
+                <p>Explora algunas herramientas construidas con JavaScript y CSS.</p>
+            </div>
+
+            <div class="apps-grid">
+                <!-- Radio App -->
+                <div class="app-card radio-card">
+                    <div class="app-header">
+                        <i class="fas fa-radio"></i>
+                        <h3>Radio En Vivo</h3>
+                    </div>
+                    <div class="radio-player">
+                        <div class="station-info">
+                            <span class="status pulse">En Vivo</span>
+                            <h4>Diospi Suyana Radio</h4>
+                        </div>
+                        <div class="visualizer">
+                            <div class="bar"></div>
+                            <div class="bar"></div>
+                            <div class="bar"></div>
+                            <div class="bar"></div>
+                            <div class="bar"></div>
+                        </div>
+                        <audio id="radio-audio" src="https://cast2.my-control-panel.com/proxy/diospis1/"></audio>
+                        <div class="player-controls">
+                            <button id="play-pause" class="control-btn"><i class="fas fa-play"></i></button>
+                            <input type="range" id="volume" min="0" max="1" step="0.1" value="0.5">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Calculator App -->
+                <div class="app-card calculator-card">
+                    <div class="app-header">
+                        <i class="fas fa-calculator"></i>
+                        <h3>Calculadora</h3>
+                    </div>
+                    <div class="calculator">
+                        <input type="text" id="calc-display" readonly placeholder="0">
+                        <div class="calc-keys">
+                            <button class="key op" onclick="clearCalc()">C</button>
+                            <button class="key op" onclick="appendCalc('/')">/</button>
+                            <button class="key op" onclick="appendCalc('*')">×</button>
+                            <button class="key op" onclick="deleteCalc()">DEL</button>
+                            <button class="key" onclick="appendCalc('7')">7</button>
+                            <button class="key" onclick="appendCalc('8')">8</button>
+                            <button class="key" onclick="appendCalc('9')">9</button>
+                            <button class="key op" onclick="appendCalc('-')">-</button>
+                            <button class="key" onclick="appendCalc('4')">4</button>
+                            <button class="key" onclick="appendCalc('5')">5</button>
+                            <button class="key" onclick="appendCalc('6')">6</button>
+                            <button class="key op" onclick="appendCalc('+')">+</button>
+                            <button class="key" onclick="appendCalc('1')">1</button>
+                            <button class="key" onclick="appendCalc('2')">2</button>
+                            <button class="key" onclick="appendCalc('3')">3</button>
+                            <button class="key equal" onclick="calculate()">=</button>
+                            <button class="key zero" onclick="appendCalc('0')">0</button>
+                            <button class="key" onclick="appendCalc('.')">.</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Weather/Clock Widget (Bonus) -->
+                <div class="app-card clock-card">
+                    <div class="app-header">
+                        <i class="fas fa-clock"></i>
+                        <h3>Reloj Global</h3>
+                    </div>
+                    <div class="clock-display">
+                        <div id="time">00:00:00</div>
+                        <div id="date">Enero 3, 2026</div>
+                    </div>
+                    <div class="weather-mini">
+                        <i class="fas fa-sun"></i>
+                        <span>24°C - Despejado</span>
+                    </div>
+                </div>
+
+                <!-- Unit Converter (Bonus) -->
+                <div class="app-card converter-card">
+                    <div class="app-header">
+                        <i class="fas fa-exchange-alt"></i>
+                        <h3>Conversor (km a m)</h3>
+                    </div>
+                    <div class="converter">
+                        <input type="number" id="unit-input" placeholder="Kilómetros" oninput="convertUnits()">
+                        <div class="result-display">
+                            <span id="unit-result">0</span> metros
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="projects">
+            <div class="section-header">
+                <h2>Proyectos Destacados</h2>
+                <p>Una selección de mi trabajo más reciente en Android.</p>
+            </div>
+            <div class="projects-container">
+                <div class="project-card">
+                    <div class="project-img">
+                        <i class="fas fa-broadcast-tower"></i>
+                    </div>
+                    <div class="project-info">
+                        <h3>Diospi Suyana Radio App</h3>
+                        <p>App nativa con ExoPlayer, notificaciones en tiempo real y Material 3.</p>
+                        <div class="tags">
+                            <span>Kotlin</span>
+                            <span>Compose</span>
+                            <span>Media3</span>
+                        </div>
+                        <a href="#" class="project-link">Ver App <i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-img">
+                        <i class="fab fa-google-play"></i>
+                    </div>
+                    <div class="project-info">
+                        <h3>Dunamys Store</h3>
+                        <p>Visita mi catálogo completo de aplicaciones publicadas en Google Play Store.</p>
+                        <div class="tags">
+                            <span>Google Play</span>
+                            <span>Apps</span>
+                            <span>Publicadas</span>
+                        </div>
+                        <a href="https://play.google.com/store/apps/developer?id=DunamysApps" target="_blank"
+                            class="project-link">Ir a la Store <i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact">
+            <div class="contact-card">
+                <h2>¿Trabajamos juntos?</h2>
+                <p>Estoy disponible para proyectos freelance o tiempo completo.</p>
+                <form id="contact-form">
+                    <div class="form-group">
+                        <input type="text" placeholder="Nombre" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Email" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="Tu mensaje" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">Enviar Mensaje</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Dunamys Apps. Creado con ❤️ y pasión por el código.</p>
+        <div class="social-links">
+            <a href="https://play.google.com/store/apps/developer?id=DunamysApps" target="_blank"><i
+                    class="fab fa-google-play"></i></a>
+            <a href="#"><i class="fab fa-github"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
